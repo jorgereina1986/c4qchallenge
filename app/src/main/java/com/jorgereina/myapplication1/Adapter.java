@@ -57,8 +57,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
         Period period = periodList.get(position);
 
         holder.dateTv.setText(convertTimestamp(period.getTimestamp()));
-        holder.highTempTv.setText(period.getMinTempF()+"");
-        holder.lowTempTv.setText(period.getMinTempF()+"");
+        holder.highTempTv.setText("High: "+period.getMinTempF()+"F");
+        holder.lowTempTv.setText("Low: "+period.getMinTempF()+"F");
 
     }
 
@@ -69,12 +69,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
 
 
     public String convertTimestamp(long timestamp){
-
         Timestamp stamp = new Timestamp(timestamp*1000);
         Date date = new Date(stamp.getTime());
-
-        return date.toString();
-
+        String dateS = date.toString();
+        dateS = dateS.substring(0, 10);
+        return dateS;
     }
 
 
