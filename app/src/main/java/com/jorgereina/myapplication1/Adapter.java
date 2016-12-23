@@ -57,7 +57,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
         Period period = periodList.get(position);
 
         holder.dateTv.setText(convertTimestamp(period.getTimestamp()));
-        holder.highTempTv.setText("High: "+period.getMinTempF()+"F");
+        holder.highTempTv.setText("High: "+period.getMaxTempF()+"F");
         holder.lowTempTv.setText("Low: "+period.getMinTempF()+"F");
 
     }

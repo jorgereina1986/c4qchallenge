@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         periodArrayList = new ArrayList<>();
         initViews();
-        networkCall();
+//        networkCall();
 
     }
 
@@ -88,15 +88,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         adapter = new Adapter(getApplicationContext(), periodArrayList);
         recyclerView.setAdapter(adapter);
-//        adapter.notifyDataSetChanged();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+                networkCall();
             }
         });
     }
